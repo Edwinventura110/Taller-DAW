@@ -14,30 +14,7 @@ class Entry{
     }
 }
 // Esta clase sera la encargada de mantener las tareas o procesos que el usuario haga en la interfaz de el, (formulario)
-class UI{
-    static displayEntries(){
-   
-        const entries = Store.getEntries();
-        entries.forEach((entry) => UI.addEntryToTable(entry));
-    }
-    // Tabla que contiene las variables que almacenan los campos del formulario
-    static addEntryToTable(entry){
-        const tableBody=document.querySelector('#tableBody');
-        const row = document.createElement('tr');
-        row.innerHTML = `   <td>${entry.owner}</td>
-                            <td>${entry.number}</td>
-                            <td>${entry.nit}</td>
-                            <td>${entry.car}</td>
-                            <td>${entry.model}</td>
-                            <td>${entry.color}</td>
-                            <td>${entry.year}</td>
-                            <td>${entry.licensePlate}</td>
-                            <td>${entry.entryDate}</td>
-                            <td>${entry.exitDate}</td>
-                            <td><button class="btn btn-info delete">X</button></td>
-                        `;
-        tableBody.appendChild(row);
-    }
+
     static clearInput(){
         //Selecciona todas las entradas del formulario
         const inputs = document.querySelectorAll('.form-control');
